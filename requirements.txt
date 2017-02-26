@@ -1,5 +1,6 @@
 appdirs==1.4.0
 Django==1.10.5
+django-cors-headers==2.0.2
 djangorestframework==3.5.4
 gunicorn==19.6.0
 olefile==0.44
