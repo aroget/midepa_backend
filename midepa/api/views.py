@@ -99,6 +99,11 @@ class PresupuestoListCreateAPIView(generics.ListCreateAPIView):
     serializer_class = PresupuestoSerializer
     queryset = Presupuesto.objects.all()
 
+    def perform_create(self, serializer):
+        condominio_id = self.request.data['condominio']
+        condominio = Condominio.objects.get(id = condominio_id)
+        serializer.save(condominio = condominio)
+
 
 '''
 DELETE, PATCH, GET for single presupuesto
